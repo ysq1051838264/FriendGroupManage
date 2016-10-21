@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_gray_f4f4f4"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/manageGroupRl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:drawableStart="@drawable/drag_item_add"
+            android:drawablePadding="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="添加分组" />
+
+        <ImageView
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/system_setting_arrow" />
+    </RelativeLayout>
+
+    <com.example.ysq.friendgroupmanage.DragListView
+        android:id="@+id/dragList"
+        android:layout_marginTop="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:cacheColorHint="#00000000"
+        android:divider="#e5e5e5"
+        android:dividerHeight="1px"
+        android:fadingEdge="none"
+        android:listSelector="#00000000" />
+
+</LinearLayout>
