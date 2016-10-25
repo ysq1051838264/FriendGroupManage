@@ -1,5 +1,5 @@
 # FriendGroupManage
-仿qq管理分组
+仿qq分组管理，可以删除、增加、以及修改等等 
 
 ![image](https://github.com/ysq1051838264/FriendGroupManage/blob/master/1.gif)
 
