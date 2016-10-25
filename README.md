@@ -3,8 +3,9 @@
 
 ![image](https://github.com/ysq1051838264/FriendGroupManage/blob/master/1.gif)
 
-###使用方法,在XML中添加
-<com.example.ysq.friendgroupmanage.DragListView
+###使用方法
+    1.在XML中添加
+    <com.example.ysq.friendgroupmanage.DragListView
         android:id="@+id/dragList"
         android:layout_marginTop="10dp"
         android:layout_width="fill_parent"
@@ -14,9 +15,8 @@
         android:dividerHeight="1px"
         android:fadingEdge="none"
         android:listSelector="#00000000" />
-        
-       
-      ### 在代码中添加
+   
+     2.在代码中添加
              mAdapter.listener(new DragListAdapter.ManageGroupLister() {
                     @Override
                     public void onItemClick(ManageGroupModel manageGroupModel) {
