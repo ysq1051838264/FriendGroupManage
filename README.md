@@ -18,31 +18,35 @@
    
      2.在代码中添加
              mAdapter.listener(new DragListAdapter.ManageGroupLister() {
-                    @Override
-                    public void onItemClick(ManageGroupModel manageGroupModel) {
-                        new TextInputDialog.Builder()
-                                .setText(manageGroupModel.groupName)
-                                .textInputConfirmListener(new TextInputDialog.TextInputConfirmListener() {
-                                    @Override
-                                    public boolean onConfirm(String text) {
-                                        return true;
-                                    }
-                                })
-                                .setContext(getContext())
-                                .build().show();
-                    }
-        
-                    @Override
-                    public void onItemDelete(ManageGroupModel manageGroupModel) {
-                        ToastMaker.show(getContext(), "删除了该选项");
-                    }
-        
-                    @Override
-                    public void updateView(List<ManageGroupModel> lists) {
-                        ToastMaker.show(getContext(), "更新组选项");
-                        models = (ArrayList<ManageGroupModel>) lists;
-                    }
-                });
+                       @Override
+                       public void onItemClick(final ManageGroupModel manageGroupModel) {
+                           new TextInputDialog.Builder()
+                                   .setText(manageGroupModel.groupName)
+                                   .textInputConfirmListener(new TextInputDialog.TextInputConfirmListener() {
+                                       @Override
+                                       public boolean onConfirm(String text) {
+                                           //修改了组名,提交服务器
+                                           models.get(manageGroupModel.serverId).groupName = text;
+                                           mAdapter.notifyDataSetChanged();
+                                           
+                                           return true;
+                                       }
+                                   })
+                                   .setContext(getContext())
+                                   .build().show();
+                       }
+           
+                       @Override
+                       public void onItemDelete(ManageGroupModel manageGroupModel) {
+                           ToastMaker.show(getContext(), "删除了哈哈哈");
+                       }
+           
+                       @Override
+                       public void updateView(List<ManageGroupModel> lists) {
+                           //移动分组,更新UI以及保存
+                           models = (ArrayList<ManageGroupModel>) lists;
+                       }
+                   });
         
 
 **[DownLoad Apk](https://github.com/ysq1051838264/FriendGroupManage/blob/master/apk/FriendGroupManage.apk?raw=true)**
